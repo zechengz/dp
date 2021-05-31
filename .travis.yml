@@ -26,9 +26,7 @@ install:
       pip install torch-sparse==latest+${IDX} -f https://pytorch-geometric.com/whl/torch-${TORCH_VERSION}.html
       pip install torch-cluster==latest+${IDX} -f https://pytorch-geometric.com/whl/torch-${TORCH_VERSION}.html && 
       pip install torch-spline-conv==latest+${IDX} -f https://pytorch-geometric.com/whl/torch-${TORCH_VERSION}.html
-    fi
-  - |
-    if [[ ! ${TORCH_VERSION} == "1.4.0" && ! ${TORCH_VERSION} == "1.5.0"]]; then 
+    else
       pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-${TORCH_VERSION}+${IDX}.html && 
       pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-${TORCH_VERSION}+${IDX}.html && 
       pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-${TORCH_VERSION}+${IDX}.html && 
